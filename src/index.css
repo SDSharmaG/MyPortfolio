@@ -1,0 +1,131 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0B0C10; /* Dark background */
+  color: #C5C6C7; /* Light text */
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Dark Theme */
+.bg-dark {
+  background-color: #0B0C10 !important;
+}
+
+.text-info {
+  color: #66FCF1 !important; /* Neon cyan */
+}
+
+.btn-info {
+  background-color: #66FCF1 !important;
+  border-color: #66FCF1 !important;
+  color: #0B0C10 !important;
+}
+
+.btn-info:hover {
+  background-color: #45A29E !important;
+  border-color: #45A29E !important;
+}
+
+.btn-outline-info {
+  color: #66FCF1 !important;
+  border-color: #66FCF1 !important;
+}
+
+.btn-outline-info:hover {
+  background-color: #66FCF1 !important;
+  color: #0B0C10 !important;
+}
+
+.border-info {
+  border-color: #66FCF1 !important;
+}
+
+.bg-info {
+  background-color: #66FCF1 !important;
+}
+
+/* Project Card Hover Animation */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(102, 252, 241, 0.2) !important;
+  border-color: #45A29E !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2833;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #45A29E;
+}
+
+/* Unique Aesthetics */
+.glass-card {
+  background: rgba(11, 12, 16, 0.6) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(102, 252, 241, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-bg-glow {
+  background: radial-gradient(circle at center, rgba(102, 252, 241, 0.08) 0%, rgba(11, 12, 16, 1) 70%) !important;
+}
+
+/* Pulsing Status Dot */
+.status-dot-pulse {
+  width: 12px;
+  height: 12px;
+  background-color: #66FCF1;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 rgba(102, 252, 241, 0.7);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 252, 241, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 252, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 252, 241, 0);
+  }
+}
+
+/* Mobile Typography & Layout Optimization */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  .display-5 {
+    font-size: 2rem;
+  }
+  .hero-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-btn-group .btn {
+    width: 100%;
+  }
+}
