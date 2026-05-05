@@ -1,72 +1,86 @@
+// components/Education.js
 import React from 'react';
 
 const Education = () => {
+  const educationList = [
+    {
+      degree: "B.Tech – Computer Science & Engineering",
+      institution: "Christ College of Engineering & Technology, Puducherry",
+      period: "2021 – 2025",
+      score: "CGPA: 8.3/10"
+    },
+    {
+      degree: "Higher Secondary (Computer Science)",
+      institution: "The Roy International School, Puducherry",
+      period: "2019 – 2021",
+      score: "87.5%"
+    },
+    {
+      degree: "Secondary School Leaving Certificate",
+      institution: "Sri Rahavendirar High School, Puducherry",
+      period: "2018 – 2019",
+      score: "89%"
+    }
+  ];
+
+  const certifications = [
+    { name: "MERN Stack Development", issuer: "Image Creative Education", year: "2026" },
+    { name: "Java Programming", issuer: "Sarath Life Academy", year: "2024" },
+    { name: "Python Programming", issuer: "Edan Academy", year: "2023" }
+  ];
+
   return (
-    <section id="education" className="py-5 bg-dark text-white border-top border-secondary border-opacity-25">
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-12 text-center mb-5">
-            <h2 className="display-5 fw-bold">Education & <span className="text-info">Certifications</span></h2>
-            <div className="mx-auto" style={{ height: '3px', width: '80px', backgroundColor: '#0dcaf0' }}></div>
+    <section id="education" className="py-5">
+      <div className="container py-5">
+        <div className="row justify-content-center text-center mb-5">
+          <div className="col-lg-8">
+            <h2 className="display-5 fw-bold mb-3">Education & <span className="text-info">Certifications</span></h2>
+            <div className="mx-auto" style={{ height: '3px', width: '60px', background: `linear-gradient(90deg, var(--accent), #2BC4D4)` }}></div>
           </div>
         </div>
 
         <div className="row g-5">
           <div className="col-lg-6">
-            <h3 className="h4 mb-4 text-info d-flex align-items-center">
-              <i className="bi bi-mortarboard-fill me-2"></i> Education
+            <h3 className="h4 fw-bold mb-4 d-flex align-items-center gap-2">
+              <i className="bi bi-mortarboard-fill text-info"></i>
+              Academic Background
             </h3>
-            
-            <div className="position-relative border-start border-info ms-3 ps-4 pb-4">
-              <span className="position-absolute top-0 start-0 translate-middle p-2 bg-info border border-light rounded-circle"></span>
-              <h5 className="fw-bold mb-1">B.Tech – Computer Science & Engineering</h5>
-              <h6 className="text-light opacity-75 mb-2">Christ College of Engineering & Technology, Puducherry</h6>
-              <div className="d-flex justify-content-between text-light small">
-                <span>2021 – 2025</span>
-                <span className="fw-semibold text-light">CGPA: 8.3 / 10</span>
-              </div>
-            </div>
-
-            <div className="position-relative border-start border-info ms-3 ps-4 pb-4">
-              <span className="position-absolute top-0 start-0 translate-middle p-2 bg-info border border-light rounded-circle"></span>
-              <h5 className="fw-bold mb-1">Higher Secondary (Computer Science)</h5>
-              <h6 className="text-light opacity-75 mb-2">The Roy International School, Puducherry</h6>
-              <div className="d-flex justify-content-between text-light small">
-                <span>2019 – 2021</span>
-                <span className="fw-semibold text-light">87.5%</span>
-              </div>
-            </div>
-
-            <div className="position-relative border-start border-info border-bottom-0 ms-3 ps-4 pb-0">
-              <span className="position-absolute top-0 start-0 translate-middle p-2 bg-info border border-light rounded-circle"></span>
-              <h5 className="fw-bold mb-1">Secondary School Leaving Certificate</h5>
-              <h6 className="text-light opacity-75 mb-2">Sri Rahavendirar High School, Puducherry</h6>
-              <div className="d-flex justify-content-between text-light small">
-                <span>2018 – 2019</span>
-                <span className="fw-semibold text-light">89%</span>
-              </div>
+            <div className="position-relative">
+              {educationList.map((edu, idx) => (
+                <div key={idx} className="position-relative ps-4 pb-4" style={{ borderLeft: `2px solid var(--accent)` }}>
+                  <div className="timeline-dot"></div>
+                  <div className="glass-card p-4 rounded-3 ms-3">
+                    <div className="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+                      <h5 className="fw-bold mb-0 text-info">{edu.degree}</h5>
+                      <span className="tech-badge">{edu.score}</span>
+                    </div>
+                    <p className="mb-1" style={{ color: 'var(--text-secondary)' }}>{edu.institution}</p>
+                    <small style={{ color: 'var(--text-muted)' }}>{edu.period}</small>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="col-lg-6">
-            <h3 className="h4 mb-4 text-info d-flex align-items-center">
-              <i className="bi bi-award-fill me-2"></i> Certifications
+            <h3 className="h4 fw-bold mb-4 d-flex align-items-center gap-2">
+              <i className="bi bi-award-fill text-info"></i>
+              Certifications
             </h3>
-            
-            <ul className="list-group list-group-flush rounded shadow-sm">
-              <li className="list-group-item bg-dark text-light border-secondary p-3">
-                <div className="fw-bold">MERN Stack Development</div>
-                <div className="text-light opacity-75 small mt-1">Image Creative Education (2026)</div>
-              </li>
-              <li className="list-group-item bg-dark text-light border-secondary p-3">
-                <div className="fw-bold">Java Programming</div>
-                <div className="text-light opacity-75 small mt-1">Sarath Life Academy (2024)</div>
-              </li>
-              <li className="list-group-item bg-dark text-light border-secondary p-3 border-bottom-0">
-                <div className="fw-bold">Python Programming</div>
-                <div className="text-light opacity-75 small mt-1">Edan Academy (2023)</div>
-              </li>
-            </ul>
+            <div className="row g-3">
+              {certifications.map((cert, idx) => (
+                <div className="col-12" key={idx}>
+                  <div className="glass-card p-4 rounded-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <div>
+                      <i className="bi bi-patch-check-fill text-info me-2"></i>
+                      <span className="fw-semibold">{cert.name}</span>
+                      <div className="small mt-1" style={{ color: 'var(--text-muted)' }}>{cert.issuer}</div>
+                    </div>
+                    <span className="tech-badge">{cert.year}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

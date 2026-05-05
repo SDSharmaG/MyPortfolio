@@ -1,1 +1,470 @@
-/* App specific styles can go here if needed */
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Dark Theme (Default) */
+  --dark-bg-primary: #0A0A0F;
+  --dark-bg-secondary: #050508;
+  --dark-bg-card: rgba(15, 15, 25, 0.8);
+  --dark-text-primary: #FFFFFF;
+  --dark-text-secondary: #A0A0B0;
+  --dark-text-muted: #6B6B7A;
+  --dark-border: rgba(255, 255, 255, 0.08);
+  --dark-accent: #4DF8FF;
+  --dark-accent-glow: rgba(77, 248, 255, 0.15);
+  --dark-card-border: rgba(77, 248, 255, 0.12);
+  
+  /* Light Theme */
+  --light-bg-primary: #F5F7FC;
+  --light-bg-secondary: #FFFFFF;
+  --light-bg-card: rgba(255, 255, 255, 0.95);
+  --light-text-primary: #1A1A2E;
+  --light-text-secondary: #4A4A5A;
+  --light-text-muted: #8A8A9A;
+  --light-border: rgba(0, 0, 0, 0.06);
+  --light-accent: #0EA5E9;
+  --light-accent-glow: rgba(14, 165, 233, 0.1);
+  --light-card-border: rgba(14, 165, 233, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+body[data-theme="dark"] {
+  background-color: var(--dark-bg-primary);
+  color: var(--dark-text-primary);
+}
+
+body[data-theme="light"] {
+  background-color: var(--light-bg-primary);
+  color: var(--light-text-primary);
+}
+
+/* Theme Classes */
+.theme-dark {
+  --bg-primary: var(--dark-bg-primary);
+  --bg-secondary: var(--dark-bg-secondary);
+  --bg-card: var(--dark-bg-card);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --text-muted: var(--dark-text-muted);
+  --border-color: var(--dark-border);
+  --accent: var(--dark-accent);
+  --accent-glow: var(--dark-accent-glow);
+  --card-border: var(--dark-card-border);
+}
+
+.theme-light {
+  --bg-primary: var(--light-bg-primary);
+  --bg-secondary: var(--light-bg-secondary);
+  --bg-card: var(--light-bg-card);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --text-muted: var(--light-text-muted);
+  --border-color: var(--light-border);
+  --accent: var(--light-accent);
+  --accent-glow: var(--light-accent-glow);
+  --card-border: var(--light-card-border);
+}
+
+.portfolio-app {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Custom Background Colors */
+.bg-dark, .bg-darker {
+  background-color: var(--bg-primary) !important;
+}
+
+.text-info {
+  color: var(--accent) !important;
+}
+
+.text-secondary-custom {
+  color: var(--text-secondary) !important;
+}
+
+.border-secondary {
+  border-color: var(--border-color) !important;
+}
+
+/* Buttons */
+.btn-info {
+  background: linear-gradient(135deg, var(--accent) 0%, #2BC4D4 100%) !important;
+  border: none !important;
+  color: #0A0A0F !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px var(--accent-glow);
+}
+
+.btn-outline-info {
+  border: 1.5px solid var(--accent) !important;
+  color: var(--accent) !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-outline-info:hover {
+  background: var(--accent) !important;
+  color: #0A0A0F !important;
+  transform: translateY(-2px);
+}
+
+/* Glass Card Effect */
+.glass-card {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border) !important;
+  border-radius: 24px !important;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent) !important;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Project Card */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  border-radius: 28px !important;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 40px -12px var(--accent-glow) !important;
+}
+
+/* Tech Badge */
+.tech-badge {
+  background: var(--accent-glow);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Hero Background */
+.hero-bg-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-glow::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at 30% 50%, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Pulse Animation for Status Dot */
+.status-dot-pulse {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.status-dot-pulse::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--accent);
+  border-radius: 50%;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(2.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+/* Skill Progress Bar */
+.skill-progress {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border-color);
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #2BC4D4);
+  border-radius: 3px;
+  width: 0;
+  transition: width 1s ease;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  top: 5px;
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+/* Section Header */
+.section-header {
+  position: relative;
+  display: inline-block;
+}
+
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), #2BC4D4);
+  border-radius: 3px;
+}
+
+/* Form Controls */
+.form-control, .form-control:focus {
+  background-color: transparent !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: 16px !important;
+  padding: 12px 16px !important;
+}
+
+.form-control:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-glow) !important;
+}
+
+.form-label {
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* Navbar */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: var(--text-primary) !important;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .display-3 {
+    font-size: 2.5rem !important;
+  }
+  
+  .display-5 {
+    font-size: 2rem !important;
+  }
+  
+  .glass-card {
+    border-radius: 20px !important;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .display-3 {
+    font-size: 2rem !important;
+  }
+  
+  .display-5 {
+    font-size: 1.8rem !important;
+  }
+  
+  .display-6 {
+    font-size: 1.5rem !important;
+  }
+  
+  .lead {
+    font-size: 1rem !important;
+  }
+  
+  .btn-lg {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .glass-card {
+    border-radius: 16px !important;
+    padding: 20px !important;
+  }
+  
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    left: -6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .display-3 {
+    font-size: 1.8rem !important;
+  }
+  
+  .h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .tech-badge {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .glass-card {
+    border-radius: 14px !important;
+    padding: 16px !important;
+  }
+  
+  .project-card .card-body {
+    padding: 20px !important;
+  }
+}
+
+/* Smooth Transitions for Theme Change */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+}
+
+/* Image Styling */
+.rounded-4 {
+  border-radius: 20px !important;
+}
+
+/* Badge Styling */
+.badge {
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 30px;
+}
+
+/* Card Body */
+.card-body {
+  padding: 28px !important;
+}

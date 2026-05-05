@@ -1,63 +1,64 @@
+// components/About.js
 import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="py-5 bg-dark text-white">
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-12 text-center mb-5">
-            <h2 className="display-5 fw-bold">About <span className="text-info">Me</span></h2>
-            <div className="mx-auto" style={{ height: '3px', width: '60px', backgroundColor: '#0dcaf0' }}></div>
+    <section id="about" className="py-5">
+      <div className="container py-5">
+        <div className="row justify-content-center text-center mb-5">
+          <div className="col-lg-8">
+            <h2 className="display-5 fw-bold mb-3">About <span className="text-info">Me</span></h2>
+            <div className="mx-auto" style={{ height: '3px', width: '60px', background: `linear-gradient(90deg, var(--accent), #2BC4D4)` }}></div>
           </div>
         </div>
         
-        <div className="row g-4 align-items-center">
+        <div className="row g-5 align-items-center">
           <div className="col-lg-6">
-            <h3 className="h4 mb-3">MERN Stack Developer</h3>
-            <p className="text-secondary" style={{ lineHeight: '1.8' }}>
-              I am a MERN Stack Developer with hands-on experience building scalable full-stack web applications using MongoDB, Express.js, React.js, and Node.js. Proficient in RESTful API development, JWT authentication, MVC architecture, and responsive UI design.
+            <h3 className="h3 fw-bold mb-4">Who Am I?</h3>
+            <p className="fs-5 mb-4" style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+              I'm a passionate <span className="text-info fw-semibold">MERN Stack Developer</span> with a BTech in Computer Science Engineering. 
+              I specialize in building end-to-end web applications that are scalable, secure, and user-friendly.
             </p>
-            <p className="text-secondary" style={{ lineHeight: '1.8' }}>
-              I am passionate about building modern, real-world solutions that provide excellent user experiences while maintaining clean code and scalable architecture.
+            <p className="mb-4" style={{ color: 'var(--text-muted)' }}>
+              My journey in web development started during my college years, and since then I've been 
+              continuously learning and implementing modern web technologies. I thrive in collaborative 
+              environments and love solving real-world problems through code.
             </p>
             
-            <div className="mt-4">
-              <h4 className="h5 mb-3">Strengths</h4>
-              <div className="d-flex flex-wrap gap-2">
-                {['Problem Solving', 'Team Collaboration', 'Time Management', 'Adaptability', 'Continuous Learning'].map((strength, index) => (
-                  <span key={index} className="badge bg-secondary px-3 py-2 fs-6 fw-normal rounded-pill text-white">{strength}</span>
-                ))}
+            <div className="row g-3 mt-3">
+              <div className="col-sm-6">
+                <div className="glass-card p-3 rounded-3 text-center">
+                  <i className="bi bi-code-slash fs-1 text-info mb-2"></i>
+                  <h6 className="fw-bold mb-1">Clean Code</h6>
+                  <small style={{ color: 'var(--text-muted)' }}>Write maintainable, scalable code</small>
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="glass-card p-3 rounded-3 text-center">
+                  <i className="bi bi-megaphone fs-1 text-info mb-2"></i>
+                  <h6 className="fw-bold mb-1">Team Player</h6>
+                  <small style={{ color: 'var(--text-muted)' }}>Excellent communication & collaboration</small>
+                </div>
               </div>
             </div>
           </div>
           
           <div className="col-lg-6">
-            <div className="card glass-card border-0 p-4 shadow-lg h-100">
-              <h4 className="h5 mb-4 border-bottom border-secondary pb-2 text-info">Technical Skills</h4>
-              
-              <div className="mb-3">
-                <h6 className="fw-bold mb-2 text-info">Languages</h6>
-                <p className="text-light">JavaScript (ES6+), C, C++</p>
-              </div>
-              
-              <div className="mb-3">
-                <h6 className="fw-bold mb-2 text-info">Frontend</h6>
-                <p className="text-light">React.js, HTML5, CSS3, Bootstrap 5</p>
-              </div>
-              
-              <div className="mb-3">
-                <h6 className="fw-bold mb-2 text-info">Backend & Auth</h6>
-                <p className="text-light">Node.js, Express.js, REST APIs, MVC Architecture, JWT</p>
-              </div>
-              
-              <div className="mb-3">
-                <h6 className="fw-bold mb-2 text-info">Database</h6>
-                <p className="text-light">MongoDB, MSSQL, Mongoose</p>
-              </div>
-              
-              <div>
-                <h6 className="fw-bold mb-2 text-info">Tools</h6>
-                <p className="text-light mb-0">Git, GitHub, Postman, VS Code, MongoDB Compass, Vite</p>
+            <div className="glass-card p-4 rounded-4">
+              <h4 className="fw-bold mb-4 text-info">Quick Facts</h4>
+              <div className="d-flex flex-column gap-3">
+                {[
+                  { label: "📍 Location", value: "Puducherry, India" },
+                  { label: "🎓 Education", value: "B.Tech CSE (8.3 CGPA)" },
+                  { label: "💼 Experience", value: "Fresher + 4 Projects" },
+                  { label: "🚀 Availability", value: "Immediate Joining" },
+                  { label: "📧 Email", value: "sdsharma03.dev@gmail.com" }
+                ].map((item, idx) => (
+                  <div key={idx} className="d-flex justify-content-between align-items-center pb-2" style={{ borderBottom: '1px solid var(--border-color)' }}>
+                    <span style={{ color: 'var(--text-muted)' }}>{item.label}</span>
+                    <span className="fw-medium">{item.value}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
