@@ -31,11 +31,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-margin-top: 80px;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+ scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* This matches your navbar height */
 }
 
 body {
@@ -467,4 +468,9 @@ body[data-theme="light"] {
 /* Card Body */
 .card-body {
   padding: 28px !important;
+}
+
+/* Specific section offset */
+#hero, #about, #skills, #projects, #education, #contact {
+  scroll-margin-top: 80px;
 }
