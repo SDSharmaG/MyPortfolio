@@ -1,0 +1,22 @@
+/* Global fix for fixed navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 0 !important;
+}
+
+/* Ensure first section doesn't get hidden */
+#hero {
+  padding-top: 80px !important;
+  margin-top: -80px !important;
+  background-attachment: fixed;
+}
+
+/* For all sections */
+section:not(#hero) {
+  scroll-margin-top: 80px;
+}

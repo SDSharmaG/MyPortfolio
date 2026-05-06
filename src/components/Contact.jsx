@@ -81,11 +81,11 @@ const Contact = () => {
                 <div className="row g-3">
                   <div className="col-md-6">
                     <label className="form-label">Full Name *</label>
-                    <input type="text" name="name" className="form-control" placeholder="John Smith" required />
+                    <input type="text" name="name" className="form-control" placeholder="Your Name" required />
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">Email Address *</label>
-                    <input type="email" name="email" className="form-control" placeholder="john@company.com" required />
+                    <input type="email" name="email" className="form-control" placeholder="youremail@company.com" required />
                   </div>
                   <div className="col-12">
                     <label className="form-label">Company / Organization</label>
