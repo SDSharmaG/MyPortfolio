@@ -1,37 +1,37 @@
 // App.js
-import React, { useState, useEffect, createContext, useContext } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import Skills from './components/Skills';
-import ThemeToggle from './components/ThemeToggle';
-import './App.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import React, { useState, useEffect, createContext, useContext } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
+import Skills from "./components/Skills";
+import ThemeToggle from "./components/ThemeToggle";
+import "./App.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 // Theme Context
 export const ThemeContext = createContext();
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setTheme(savedTheme);
-      document.body.setAttribute('data-theme', savedTheme);
+      document.body.setAttribute("data-theme", savedTheme);
     } else {
-      document.body.setAttribute('data-theme', 'dark');
+      document.body.setAttribute("data-theme", "dark");
     }
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.body.setAttribute("data-theme", newTheme);
   };
 
   return (
